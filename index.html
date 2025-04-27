@@ -1,177 +1,207 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dian HS | Portfolio</title>
-
-  <!-- Fonts & Tailwind -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Lightbox -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
-
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
+  <title>Dian HS Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script>
+    AOS.init();
+  </script>
   <style>
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #f9fafb;
+      color: #333;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
+
+    /* Background image */
+    body::before {
+      content: "";
+      background: url('img/background-dian.jpg') center/cover no-repeat fixed;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.6; /* Sedikit gelap */
+      z-index: -2;
+    }
+
+    /* Overlay */
+    body::after {
+      content: "";
+      background: rgba(0, 0, 0, 0.3); /* Hitam transparan */
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    header, section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    nav {
+      background: #fff;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #007BFF;
+    }
+
+    .portfolio-category {
+      margin: 2rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .portfolio-category a {
+      padding: 0.5rem 1.5rem;
+      background: #007BFF;
+      color: #fff;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+
+    .portfolio-category a:hover {
+      background: #0056b3;
+    }
+
     .portfolio-card {
-      background: #ffffff;
-      border-radius: 1.5rem;
+      background: #ffffffaa;
+      border-radius: 1rem;
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .portfolio-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-    }
+
     .portfolio-desc {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      margin-top: 1rem;
     }
-    .slide-down {
-      animation: slideDown 0.3s ease-out forwards;
-    }
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      color: #222;
     }
   </style>
 </head>
+<body>
 
-<body class="text-gray-800">
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<!-- Navbar -->
-<header class="sticky top-0 bg-white z-50 shadow-sm">
-  <div class="flex justify-between items-center max-w-6xl mx-auto py-4 px-6">
-    <div class="text-2xl font-bold text-green-600">Dian HS</div>
+  <!-- Home Section -->
+  <header id="home">
+    <h1>Hi, I'm Dian!</h1>
+    <p>Visual Creator | Exploring Creativity</p>
+  </header>
 
-    <!-- Hamburger button (mobile) -->
-    <button id="menu-toggle" class="md:hidden focus:outline-none">
-      <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>Halo! Saya Dian Handayani, seorang desainer visual dan fotografer. Passion saya adalah menggabungkan kreativitas dan teknik untuk menciptakan karya yang unik dan bermakna.</p>
+  </section>
 
-    <!-- Desktop Menu -->
-    <nav class="hidden md:flex space-x-6 text-sm">
-      <a href="#home" class="hover:text-green-500">Home</a>
-      <a href="#about" class="hover:text-green-500">About</a>
-      <a href="#portfolio" class="hover:text-green-500">Portfolio</a>
-      <a href="#contact" class="hover:text-green-500">Contact</a>
-    </nav>
-  </div>
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2 class="section-title">Portfolio</h2>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden flex flex-col items-center space-y-4 mt-4 pb-4 md:hidden">
-    <a href="#home" class="hover:text-green-500">Home</a>
-    <a href="#about" class="hover:text-green-500">About</a>
-    <a href="#portfolio" class="hover:text-green-500">Portfolio</a>
-    <a href="#contact" class="hover:text-green-500">Contact</a>
-  </div>
-</header>
-
-<!-- Hero -->
-<section id="home" class="text-center py-20 bg-gray-50">
-  <img src="img/foto-kecil.jpg" alt="Foto Dian" class="w-28 h-28 rounded-full mx-auto mb-6 object-cover">
-  <h1 class="text-4xl font-bold mb-4">Hi, I'm Dian!</h1>
-  <p class="text-gray-600 text-lg">Visual Creator | Exploring Creativity</p>
-</section>
-
-<!-- About -->
-<section id="about" class="py-20 max-w-5xl mx-auto px-6">
-  <h2 class="text-3xl font-semibold text-center mb-8">About Me</h2>
-  <p class="text-center text-gray-700 leading-relaxed max-w-2xl mx-auto">
-    Halo! Saya Dian Handayani, seorang desainer visual dan fotografer.
-    Passion saya adalah menggabungkan kreativitas dan teknik untuk menciptakan karya yang meaningful.
-  </p>
-</section>
-
-<!-- Portfolio -->
-<section id="portfolio" class="py-20 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-semibold text-center mb-10">Portfolio</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-      <!-- Card Start -->
-      <div class="portfolio-card overflow-hidden" data-aos="fade-up">
-        <div class="space-y-2">
-          <a href="20250426_182458_0000.png" data-lightbox="portfolio" data-title="Product Photography 1" class="group block overflow-hidden rounded-t-2xl">
-            <img src="20250426_182458_0000.png" alt="Karya 1" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
-          </a>
-          <a href="3_20250426_182806_0001.png" data-lightbox="portfolio" data-title="Product Photography 2" class="group block overflow-hidden">
-            <img src="3_20250426_182806_0001.png" alt="Karya 2" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
-          </a>
-          <a href="img/desain3.jpg" data-lightbox="portfolio" data-title="Product Photography 3" class="group block overflow-hidden">
-            <img src="img/desain3.jpg" alt="Karya 3" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
-          </a>
-        </div>
-        <div class="p-5">
-          <h3 class="text-lg font-semibold mb-2">Product Photography | Wardah</h3>
-          <p class="text-gray-600 text-sm portfolio-desc">
-            Menciptakan visual produk dengan pencahayaan dan storytelling yang memperkuat karakter.
-          </p>
-        </div>
-      </div>
-      <!-- Card End -->
-
+    <!-- Kategori -->
+    <div class="portfolio-category">
+      <a href="#product-photography">Product Photography</a>
+      <a href="#mockup-design">Desain Mockup</a>
     </div>
-  </div>
-</section>
 
-<!-- Contact -->
-<section id="contact" class="py-20 max-w-5xl mx-auto px-6">
-  <h2 class="text-3xl font-semibold text-center mb-8">Get In Touch</h2>
-  <div class="text-center text-gray-700">
-    <p>Email: <a href="mailto:kamu@email.com" class="text-green-600 hover:underline">kamu@email.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/usernamekamu" class="text-green-600 hover:underline">@usernamekamu</a></p>
-  </div>
-</section>
+    <!-- Product Photography -->
+    <div id="product-photography" class="portfolio-card" data-aos="fade-up">
+      <div class="space-y-2">
+        <a href="img/desain1.jpg" data-lightbox="portfolio" data-title="Product Photography 1" class="group block overflow-hidden rounded-t-2xl">
+          <img src="img/desain1.jpg" alt="Karya 1" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+        </a>
+        <a href="img/desain2.jpg" data-lightbox="portfolio" data-title="Product Photography 2" class="group block overflow-hidden">
+          <img src="img/desain2.jpg" alt="Karya 2" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+        </a>
+      </div>
+      <div class="p-5">
+        <h3 class="text-lg font-semibold mb-2">Product Photography | Wardah</h3>
+        <p class="text-gray-600 text-sm portfolio-desc">
+          Menciptakan visual produk dengan pencahayaan dan storytelling yang memperkuat karakter.
+        </p>
+      </div>
+    </div>
 
-<!-- Footer -->
-<footer class="text-center text-sm text-gray-400 py-6">
-  &copy; 2025 Dian Handayani. All rights reserved.
-</footer>
+    <!-- Mockup Design -->
+    <div id="mockup-design" class="portfolio-card" data-aos="fade-up">
+      <div class="space-y-2">
+        <a href="img/mockup1.jpg" data-lightbox="portfolio" data-title="Mockup Design 1" class="group block overflow-hidden rounded-t-2xl">
+          <img src="img/mockup1.jpg" alt="Mockup 1" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+        </a>
+        <a href="img/mockup2.jpg" data-lightbox="portfolio" data-title="Mockup Design 2" class="group block overflow-hidden">
+          <img src="img/mockup2.jpg" alt="Mockup 2" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+        </a>
+      </div>
+      <div class="p-5">
+        <h3 class="text-lg font-semibold mb-2">Desain Mockup | Branding</h3>
+        <p class="text-gray-600 text-sm portfolio-desc">
+          Menyajikan desain mockup untuk memperlihatkan branding dan identitas produk.
+        </p>
+      </div>
+    </div>
 
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  // Mobile menu
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+  </section>
 
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    if (!mobileMenu.classList.contains('hidden')) {
-      mobileMenu.classList.add('slide-down');
-    } else {
-      mobileMenu.classList.remove('slide-down');
-    }
-  });
-
-  // AOS init
-  AOS.init({
-    duration: 800,
-    once: true
-  });
-</script>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>Silakan hubungi saya melalui email: <a href="mailto:dian@example.com">dian@example.com</a></p>
+  </section>
 
 </body>
 </html>
