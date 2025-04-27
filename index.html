@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dian HS Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -19,40 +17,10 @@
       position: relative;
       min-height: 100vh;
       overflow-x: hidden;
-      scroll-behavior: smooth;
+      background: #f7f9fc;
     }
 
-    /* Background image */
-    body::before {
-      content: "";
-      background: url('Biru dan Merah Muda Lembut Cat Air Tanpa Salinan Wallpaper Ponsel_20250427_081857_0000.png') center/cover no-repeat fixed;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      opacity: 0.2; /* Lebih terang */
-      z-index: -2;
-    }
-
-    /* Overlay */
-    body::after {
-      content: "";
-      background: rgba(255, 255, 255, 0.5); /* Overlay putih transparan */
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
-    }
-
-    header, section {
-      padding: 4rem 2rem;
-      text-align: center;
-      position: relative;
-    }
-
+    /* Navbar */
     nav {
       background: #fff;
       padding: 1rem 2rem;
@@ -61,7 +29,6 @@
       z-index: 100;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-
     nav ul {
       list-style: none;
       display: flex;
@@ -70,35 +37,49 @@
       margin: 0;
       padding: 0;
     }
-
     nav a {
       text-decoration: none;
       color: #333;
       font-weight: 600;
       transition: color 0.3s;
     }
-
     nav a:hover {
       color: #007BFF;
     }
 
-    .divider {
-      width: 80%;
-      height: 1px;
-      background: rgba(0, 0, 0, 0.1);
-      margin: 3rem auto;
+    header, section {
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
     }
 
+    /* Section Divider */
+    .divider {
+      width: 40px;
+      height: 6px;
+      background: #007BFF;
+      margin: 1rem auto 2rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Portfolio Kategori */
     .portfolio-category {
       margin: 2rem 0;
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1rem;
       flex-wrap: wrap;
     }
-
     .portfolio-category a {
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem 1.2rem;
       background: #007BFF;
       color: #fff;
       border-radius: 9999px;
@@ -106,160 +87,146 @@
       font-size: 0.9rem;
       transition: background 0.3s;
     }
-
     .portfolio-category a:hover {
       background: #0056b3;
     }
 
+    /* Portfolio Cards */
     .portfolio-card {
-      background: #ffffffcc;
+      background: #fff;
       border-radius: 1rem;
       overflow: hidden;
-      margin-bottom: 2rem;
-      max-width: 600px;
+      margin-bottom: 3rem;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
     }
-
-    .portfolio-card:hover {
-      transform: translateY(-5px);
-    }
-
     .portfolio-card img {
       width: 100%;
-      height: 200px;
+      height: auto;
+      display: block;
       object-fit: cover;
       transition: transform 0.3s;
     }
-
-    .group:hover img {
-      transform: scale(1.05);
+    .portfolio-card .p-5 {
+      padding: 2rem;
     }
-
     .portfolio-desc {
       margin-top: 1rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 2rem;
-      color: #222;
+      font-size: 0.95rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- Navbar -->
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- Home Section -->
-  <header id="home">
-    <h1>Hi, I'm Dian!</h1>
-    <p>Visual Creator | Exploring Creativity</p>
-  </header>
+<!-- Home Section -->
+<header id="home">
+  <h1>Hi, I'm Dian!</h1>
+  <div class="divider"></div>
+  <p>Visual Creator | Exploring Creativity</p>
+</header>
 
+<!-- About Section -->
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="divider"></div>
+  <p>Halo! Saya Dian Handayani Sutanto, lulusan SMK Negeri 1 Cileungsi jurusan Desain Komunikasi Visual. Berpengalaman dalam desain grafis, fotografi, videografi, dan content creation, baik di organisasi maupun industri. Terbiasa bekerja dalam tim, adaptif, dan fokus pada hasil visual yang detail dan komunikatif.</p>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio">
+  <h2 class="section-title">Portfolio</h2>
   <div class="divider"></div>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <p>Halo! Saya Dian Handayani Sutanto, lulusan SMK Negeri 1 Cileungsi jurusan Desain Komunikasi Visual. Berpengalaman dalam desain grafis, fotografi, videografi, dan content creation, baik di organisasi maupun industri. Terbiasa bekerja dalam tim, adaptif, dan fokus pada hasil visual yang detail dan komunikatif.</p>
-  </section>
+  <!-- Kategori -->
+  <div class="portfolio-category">
+    <a href="#product-photography">Product Photography</a>
+    <a href="#mockup-design">Desain Mockup</a>
+    <a href="#portrait-photography">Portrait Photography</a>
+  </div>
 
+  <!-- Product Photography -->
+  <div id="product-photography" class="portfolio-card" data-aos="fade-up">
+    <div class="space-y-2">
+      <a href="20250426_182458_0000.png" data-lightbox="portfolio" data-title="Product Photography 1">
+        <img src="20250426_182458_0000.png" alt="Karya 1">
+      </a>
+      <a href="2_20250426_182806_0000.png" data-lightbox="portfolio" data-title="Product Photography 2">
+        <img src="2_20250426_182806_0000.png" alt="Karya 2">
+      </a>
+      <a href="3_20250426_182806_0001.png" data-lightbox="portfolio" data-title="Product Photography 3">
+        <img src="3_20250426_182806_0001.png" alt="Karya 3">
+      </a>
+    </div>
+    <div class="p-5">
+      <h3 class="text-lg font-semibold mb-2">Product Photography | Wardah</h3>
+      <p class="portfolio-desc">Menciptakan visual produk yang lebih dari sekadar gambar — fokus pada pencahayaan, detail, dan storytelling supaya produk bisa “berbicara” lewat foto.</p>
+    </div>
+  </div>
+
+  <!-- Mockup Design -->
+  <div id="mockup-design" class="portfolio-card" data-aos="fade-up">
+    <div class="space-y-2">
+      <a href="20250426_182852_0002.png" data-lightbox="portfolio" data-title="Mockup Design 1">
+        <img src="20250426_182852_0002.png" alt="ToteBag">
+      </a>
+      <a href="20250426_182852_0001.png" data-lightbox="portfolio" data-title="Mockup Design 2">
+        <img src="20250426_182852_0001.png" alt="T-Shirt">
+      </a>
+      <a href="20250426_182852_0000.png" data-lightbox="portfolio" data-title="Mockup Design 3">
+        <img src="20250426_182852_0000.png" alt="Pin/Keychain">
+      </a>
+    </div>
+    <div class="p-5">
+      <h3 class="text-lg font-semibold mb-2">Desain Mockup | Branding</h3>
+      <p class="portfolio-desc">Merancang konsep visual dan mockup merchandise — dari kaus, totebag, hingga pin/keychain — untuk menghidupkan karakter Studio lewat desain yang catchy dan berkesan.</p>
+    </div>
+  </div>
+
+  <!-- Portrait Photography -->
+  <div id="portrait-photography" class="portfolio-card" data-aos="fade-up">
+    <div class="space-y-2">
+      <a href="20250426_182938_0000.jpg" data-lightbox="portfolio" data-title="Portrait Photography 1">
+        <img src="20250426_182938_0000.jpg" alt="Photobox">
+      </a>
+      <a href="20250426_182938_0001.jpg" data-lightbox="portfolio" data-title="Portrait Photography 2">
+        <img src="20250426_182938_0001.jpg" alt="Bubble Theme">
+      </a>
+      <a href="20250426_182938_0002.jpg" data-lightbox="portfolio" data-title="Portrait Photography 3">
+        <img src="20250426_182938_0002.jpg" alt="Spotlight">
+      </a>
+    </div>
+    <div class="p-5">
+      <h3 class="text-lg font-semibold mb-2">Portrait Photography | Creative</h3>
+      <p class="portfolio-desc">Mengeksplor gaya portrait kekinian: dari suasana playful ala photobox, sampai pencahayaan dramatis dengan spotlight. Menangkap kepribadian dalam setiap frame.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
   <div class="divider"></div>
+  <p>Silakan hubungi saya melalui email: <a href="mailto:dian@example.com">dian@example.com</a></p>
+</section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2 class="section-title">Portfolio</h2>
-
-    <!-- Kategori -->
-    <div class="portfolio-category">
-      <a href="#product-photography">Product Photography</a>
-      <a href="#mockup-design">Desain Mockup</a>
-      <a href="#portrait-photography">Portrait Photography</a>
-    </div>
-
-    <!-- Product Photography -->
-    <div id="product-photography" class="portfolio-card" data-aos="fade-up">
-      <div class="space-y-2">
-        <a href="20250426_182458_0000.png" data-lightbox="portfolio" data-title="Product Photography 1" class="group block overflow-hidden rounded-t-2xl">
-          <img src="20250426_182458_0000.png" alt="Karya 1">
-        </a>
-        <a href="3_20250426_182806_0001.png" data-lightbox="portfolio" data-title="Product Photography 2" class="group block overflow-hidden">
-          <img src="3_20250426_182806_0001.png" alt="Karya 2">
-        </a>
-        <a href="2_20250426_182806_0000.png" data-lightbox="portfolio" data-title="Product Photography 3" class="group block overflow-hidden">
-          <img src="2_20250426_182806_0000.png" alt="Karya 3">
-        </a>
-      </div>
-      <div class="p-5">
-        <h3 class="text-lg font-semibold mb-2">Product Photography | Wardah</h3>
-        <p class="text-gray-600 text-sm portfolio-desc">
-          Menciptakan visual produk yang fokus pada pencahayaan, detail, dan storytelling supaya produk bisa "berbicara" lewat foto.
-        </p>
-      </div>
-    </div>
-
-    <!-- Mockup Design -->
-    <div id="mockup-design" class="portfolio-card" data-aos="fade-up">
-      <div class="space-y-2">
-        <a href="mockup1.png" data-lightbox="portfolio" data-title="Mockup Design 1" class="group block overflow-hidden rounded-t-2xl">
-          <img src="mockup1.png" alt="Mockup 1">
-        </a>
-        <a href="mockup2.png" data-lightbox="portfolio" data-title="Mockup Design 2" class="group block overflow-hidden">
-          <img src="mockup2.png" alt="Mockup 2">
-        </a>
-        <a href="mockup3.png" data-lightbox="portfolio" data-title="Mockup Design 3" class="group block overflow-hidden">
-          <img src="mockup3.png" alt="Mockup 3">
-        </a>
-      </div>
-      <div class="p-5">
-        <h3 class="text-lg font-semibold mb-2">Desain Mockup | Branding</h3>
-        <p class="text-gray-600 text-sm portfolio-desc">
-          Merancang konsep visual dan mockup merchandise — dari kaus, totebag, hingga pin/keychain.
-        </p>
-      </div>
-    </div>
-
-    <!-- Portrait Photography -->
-    <div id="portrait-photography" class="portfolio-card" data-aos="fade-up">
-      <div class="space-y-2">
-        <a href="portrait1.jpg" data-lightbox="portfolio" data-title="Portrait Photography 1" class="group block overflow-hidden rounded-t-2xl">
-          <img src="portrait1.jpg" alt="Portrait 1">
-        </a>
-        <a href="portrait2.jpg" data-lightbox="portfolio" data-title="Portrait Photography 2" class="group block overflow-hidden">
-          <img src="portrait2.jpg" alt="Portrait 2">
-        </a>
-        <a href="portrait3.jpg" data-lightbox="portfolio" data-title="Portrait Photography 3" class="group block overflow-hidden">
-          <img src="portrait3.jpg" alt="Portrait 3">
-        </a>
-      </div>
-      <div class="p-5">
-        <h3 class="text-lg font-semibold mb-2">Portrait Photography | Creative</h3>
-        <p class="text-gray-600 text-sm portfolio-desc">
-          Mengeksplor gaya portrait kekinian dari suasana playful ala photobox sampai spotlight yang dramatis.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>Silakan hubungi saya melalui email: <a href="mailto:dian@example.com">dian@example.com</a></p>
-  </section>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </body>
-</html>
+        </html>
