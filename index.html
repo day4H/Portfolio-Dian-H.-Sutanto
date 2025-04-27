@@ -4,40 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dian HS Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lightbox -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  
+  <!-- AOS Animation -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
   <style>
     html {
       scroll-behavior: smooth;
     }
-
-    body::before {
-      content: "";
-      background: url('Biru dan Merah Muda Lembut Cat Air Tanpa Salinan Wallpaper Ponsel_20250427_081857_0000.png') center/cover no-repeat fixed;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      opacity: 0.6;
-      z-index: -2;
+    body {
+      font-family: 'Fredoka', sans-serif;
+      margin: 0;
+      background: url('Biru-dan-Merah-Muda-Lembut.png') center/cover no-repeat fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      color: #333;
     }
     body::after {
       content: "";
       background: rgba(255, 255, 255, 0.2);
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       z-index: -1;
     }
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-    }
-
+    /* Navbar */
     nav {
       background: #fff;
       padding: 1rem 2rem;
@@ -64,29 +61,50 @@
       color: #28a745;
     }
 
-    header, section {
-      padding: 3rem 2rem;
+    /* Section Styling */
+    section, header {
+      padding: 4rem 2rem;
       text-align: center;
       position: relative;
-      background: #fff;
       margin: 2rem auto;
-      width: 85%;
-      max-width: 900px;
+      width: 90%;
+      max-width: 1100px;
       border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      background-image: url('https://i.ibb.co/K5wKtQ7/doodle.png');
-      background-repeat: no-repeat;
-      background-position: top right;
-      background-size: 100px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    /* Doodle Simple */
+    section::before {
+      content: "";
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Stars.svg/1024px-Stars.svg.png') center/contain no-repeat;
+      opacity: 0.1;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 10px;
+      left: 10px;
+    }
+    section::after {
+      content: "";
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Scribble_circle.svg/1200px-Scribble_circle.svg.png') center/contain no-repeat;
+      opacity: 0.08;
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      bottom: 10px;
+      right: 10px;
     }
 
     .section-title {
       font-size: 2rem;
-      font-weight: bold;
+      font-weight: 700;
+      margin-bottom: 2rem;
       color: #222;
-      margin-bottom: 1rem;
     }
 
+    /* Portfolio Category */
     .portfolio-category {
       margin: 2rem 0;
       display: flex;
@@ -95,50 +113,63 @@
       flex-wrap: wrap;
     }
     .portfolio-category a {
-      padding: 0.5rem 1.2rem;
+      padding: 0.6rem 1.4rem;
       background: #28a745;
       color: #fff;
       border-radius: 9999px;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 1rem;
       transition: background 0.3s;
     }
     .portfolio-category a:hover {
       background: #218838;
     }
 
-    .portfolio-card {
-      background: #fff;
-      border-radius: 1rem;
-      overflow: hidden;
-      margin-bottom: 3rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 1rem;
+    /* Gallery */
+    .portfolio-gallery {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
-    .portfolio-card img {
+    .portfolio-gallery img {
       width: 100%;
-      height: auto;
-      display: block;
+      border-radius: 0.5rem;
       object-fit: cover;
       transition: transform 0.3s;
-      margin-bottom: 0.8rem;
-      border-radius: 0.5rem;
     }
-    .portfolio-card .p-5 {
-      padding: 1rem;
+    .portfolio-gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Adjust Grid Columns */
+    .columns-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .columns-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Portfolio Card */
+    .portfolio-card {
       background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 4rem;
     }
-    .portfolio-desc {
-      margin-top: 1rem;
-      font-size: 0.95rem;
-      color: #666;
-      text-align: center;
+
+    /* Contact Section */
+    a {
+      color: #28a745;
+      text-decoration: none;
     }
+    a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
+
 <body>
 
 <!-- Navbar -->
@@ -160,7 +191,7 @@
 <!-- About Section -->
 <section id="about">
   <h2 class="section-title">About Me</h2>
-  <p>Halo! Saya Dian Handayani Sutanto, lulusan SMK Negeri 1 Cileungsi jurusan Desain Komunikasi Visual. Berpengalaman dalam desain grafis, fotografi, videografi, dan content creation, baik di organisasi maupun industri. Terbiasa bekerja dalam tim, adaptif, dan fokus pada hasil visual yang detail dan komunikatif.</p>
+  <p>Halo! Saya Dian Handayani Sutanto, lulusan SMK Negeri 1 Cileungsi jurusan Desain Komunikasi Visual. Berpengalaman dalam desain grafis, fotografi, videografi, dan content creation. Terbiasa bekerja dalam tim, adaptif, dan fokus pada hasil visual yang detail dan komunikatif.</p>
 </section>
 
 <!-- Portfolio Section -->
@@ -177,78 +208,73 @@
 
   <!-- Product Photography -->
   <div id="product-photography" class="portfolio-card" data-aos="fade-up">
-    <a href="20250426_182458_0000.png" data-lightbox="portfolio" data-title="Product Photography 1">
-      <img src="20250426_182458_0000.png" alt="Karya 1">
-    </a>
-    <a href="2_20250426_182806_0000.png" data-lightbox="portfolio" data-title="Product Photography 2">
-      <img src="2_20250426_182806_0000.png" alt="Karya 2">
-    </a>
-    <a href="3_20250426_182806_0001.png" data-lightbox="portfolio" data-title="Product Photography 3">
-      <img src="3_20250426_182806_0001.png" alt="Karya 3">
-    </a>
-    <div class="p-5">
-      <h3>Product Photography | Wardah</h3>
-      <p class="portfolio-desc">Menciptakan visual produk dengan fokus pada pencahayaan dan detail untuk meningkatkan daya tarik produk di mata konsumen.</p>
+    <div class="portfolio-gallery columns-3">
+      <a href="20250426_182458_0000.png" data-lightbox="portfolio" data-title="Product Photo 1">
+        <img src="20250426_182458_0000.png" alt="Product 1">
+      </a>
+      <a href="2_20250426_182806_0000.png" data-lightbox="portfolio" data-title="Product Photo 2">
+        <img src="2_20250426_182806_0000.png" alt="Product 2">
+      </a>
+      <a href="3_20250426_182806_0001.png" data-lightbox="portfolio" data-title="Product Photo 3">
+        <img src="3_20250426_182806_0001.png" alt="Product 3">
+      </a>
     </div>
+    <p>Menciptakan visual produk dengan storytelling, pencahayaan, dan detail yang kuat untuk memperkuat identitas brand.</p>
   </div>
 
   <!-- Mockup Design -->
   <div id="mockup-design" class="portfolio-card" data-aos="fade-up">
-    <a href="20250426_182852_0002.png" data-lightbox="portfolio" data-title="Mockup Design 1">
-      <img src="20250426_182852_0002.png" alt="ToteBag">
-    </a>
-    <a href="20250426_182852_0001.png" data-lightbox="portfolio" data-title="Mockup Design 2">
-      <img src="20250426_182852_0001.png" alt="T-Shirt">
-    </a>
-    <a href="20250426_182852_0000.png" data-lightbox="portfolio" data-title="Mockup Design 3">
-      <img src="20250426_182852_0000.png" alt="Pin/Keychain">
-    </a>
-    <div class="p-5">
-      <h3>Desain Mockup | Branding</h3>
-      <p class="portfolio-desc">Merancang merchandise kreatif yang menggambarkan karakter brand secara menyenangkan dan fungsional.</p>
+    <div class="portfolio-gallery columns-3">
+      <a href="20250426_182852_0002.png" data-lightbox="portfolio" data-title="Mockup 1">
+        <img src="20250426_182852_0002.png" alt="Mockup 1">
+      </a>
+      <a href="20250426_182852_0001.png" data-lightbox="portfolio" data-title="Mockup 2">
+        <img src="20250426_182852_0001.png" alt="Mockup 2">
+      </a>
+      <a href="20250426_182852_0000.png" data-lightbox="portfolio" data-title="Mockup 3">
+        <img src="20250426_182852_0000.png" alt="Mockup 3">
+      </a>
     </div>
+    <p>Merancang mockup merchandise untuk branding studio agar tampil catchy dan memorable.</p>
   </div>
 
   <!-- Portrait Photography -->
   <div id="portrait-photography" class="portfolio-card" data-aos="fade-up">
-    <a href="20250426_182938_0000.jpg" data-lightbox="portfolio" data-title="Portrait 1">
-      <img src="20250426_182938_0000.jpg" alt="Portrait 1">
-    </a>
-    <a href="20250426_182938_0001.jpg" data-lightbox="portfolio" data-title="Portrait 2">
-      <img src="20250426_182938_0001.jpg" alt="Portrait 2">
-    </a>
-    <a href="20250426_182938_0002.jpg" data-lightbox="portfolio" data-title="Portrait 3">
-      <img src="20250426_182938_0002.jpg" alt="Portrait 3">
-    </a>
-    <div class="p-5">
-      <h3>Portrait Photography | Creative</h3>
-      <p class="portfolio-desc">Mengabadikan ekspresi personal lewat pencahayaan kreatif dan konsep visual unik.</p>
+    <div class="portfolio-gallery columns-3">
+      <a href="20250426_182938_0000.jpg" data-lightbox="portfolio" data-title="Portrait 1">
+        <img src="20250426_182938_0000.jpg" alt="Portrait 1">
+      </a>
+      <a href="20250426_182938_0001.jpg" data-lightbox="portfolio" data-title="Portrait 2">
+        <img src="20250426_182938_0001.jpg" alt="Portrait 2">
+      </a>
+      <a href="20250426_182938_0002.jpg" data-lightbox="portfolio" data-title="Portrait 3">
+        <img src="20250426_182938_0002.jpg" alt="Portrait 3">
+      </a>
     </div>
+    <p>Portrait fotografi kreatif dengan mood yang playful sampai dramatis, menangkap karakter unik setiap subjek.</p>
   </div>
 
   <!-- Logo Design -->
   <div id="logo-design" class="portfolio-card" data-aos="fade-up">
-    <a href="logoosissmk1c.jpg" data-lightbox="portfolio" data-title="Logo OSIS">
-      <img src="logoosissmk1c.jpg" alt="Logo OSIS">
-    </a>
-    <div class="p-5">
-      <h3>Logo Design | OSIS SMK Negeri 1 Cileungsi</h3>
-      <p class="portfolio-desc">Mendesain logo dengan identitas visual kuat yang merepresentasikan nilai dan misi organisasi.</p>
+    <div class="portfolio-gallery columns-1">
+      <a href="logoosissmk1c.jpg" data-lightbox="portfolio" data-title="Logo OSIS">
+        <img src="logoosissmk1c.jpg" alt="Logo OSIS">
+      </a>
     </div>
+    <p>Logo OSIS yang membawa identitas, semangat, dan nilai organisasi dalam desain yang kuat dan timeless.</p>
   </div>
 
   <!-- Street Photography -->
   <div id="street-photography" class="portfolio-card" data-aos="fade-up">
-    <a href="20250426_183024_0001.jpg" data-lightbox="portfolio" data-title="Street Photo 1">
-      <img src="20250426_183024_0001.jpg" alt="Street 1">
-    </a>
-    <a href="20250426_183024_0000.jpg" data-lightbox="portfolio" data-title="Street Photo 2">
-      <img src="20250426_183024_0000.jpg" alt="Street 2">
-    </a>
-    <div class="p-5">
-      <h3>Street Photography | City Life</h3>
-      <p class="portfolio-desc">Mengabadikan dinamika urban dalam frame yang penuh cerita dan spontanitas.</p>
+    <div class="portfolio-gallery columns-2">
+      <a href="20250426_183024_0001.jpg" data-lightbox="portfolio" data-title="Street 1">
+        <img src="20250426_183024_0001.jpg" alt="Street 1">
+      </a>
+      <a href="20250426_183024_0000.jpg" data-lightbox="portfolio" data-title="Street 2">
+        <img src="20250426_183024_0000.jpg" alt="Street 2">
+      </a>
     </div>
+    <p>Menangkap suasana kehidupan urban, dinamika manusia, dan keindahan arsitektur kota dalam satu frame.</p>
   </div>
 
 </section>
@@ -259,10 +285,12 @@
   <p>Silakan hubungi saya melalui email: <a href="mailto:handayanisdian@gmail.com">handayanisdian@gmail.com</a></p>
 </section>
 
+<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
   AOS.init();
 </script>
+
 </body>
-</html>
+          </html>
