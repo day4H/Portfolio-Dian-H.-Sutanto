@@ -60,6 +60,23 @@
     nav a:hover {
       color: #28a745;
     }
+    nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-left {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #28a745;
+}
+.nav-right {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
 
     .section-title {
       font-size: 2rem;
@@ -151,7 +168,8 @@
 
 <!-- Navbar -->
 <nav>
-  <ul>
+  <div class="nav-left">Dian HS</div>
+  <ul class="nav-right">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
